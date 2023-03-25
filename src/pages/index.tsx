@@ -97,7 +97,7 @@ export const getServerSideProps = async () => {
   {
     title: 'CTO: Keiko',
     html: '',
-    thumbnail: 'https://firebasestorage.googleapis.com/v0/b/dinami-27097.appspot.com/o/pexels-christina-morillo-1181472.jpg?alt=media&token=c122c2c2-1904-4f81-9711-893465fa9010',
+    thumbnail: 'https://firebasestorage.googleapis.com/v0/b/dinami-27097.appspot.com/o/pexels-christina-morillo-1181472.jpg?alt=media&token=afbae11c-bdcb-4a66-b5ce-524aef635b5e',
     media: '',
     contentType: 'video',
     id: '1',
