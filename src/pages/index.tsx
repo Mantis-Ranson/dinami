@@ -131,7 +131,7 @@ export const getServerSideProps = async () => {
     category: '100'
   },
   {
-    title: 'Sr Web Desinger',
+    title: 'Sr Web Designer',
     html: '',
     thumbnail: 'https://firebasestorage.googleapis.com/v0/b/dinami-27097.appspot.com/o/pexels-andrea-piacquadio-806835.jpg?alt=media&token=d27873dd-5aae-4459-8348-b6ab903ec51c',
     media: '',
