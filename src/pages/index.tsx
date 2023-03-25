@@ -3,7 +3,7 @@ import styles from '@/styles/Home.module.css'
 import Header from '@/components/Header'
 import Banner from '@/components/Banner'
 import requests from '@/utils/requests'
-import { Movie } from '@/types/content'
+import { Movie, Content, Category } from '@/types/content'
 import Row from '@/components/Row'
 
 interface Props {
@@ -15,6 +15,8 @@ interface Props {
   horrorMovies: Movie[]
   romanceMovies: Movie[]
   documentaries: Movie[]
+  contents: Content[],
+  categories: Category[]
 }
 
 const Home = ({
@@ -24,6 +26,8 @@ const Home = ({
   documentaries,
   horrorMovies,
   romanceMovies,
+  categories,
+  contents,
   topRated,
   trendingNow}: Props) => {
   return (
@@ -37,19 +41,13 @@ const Home = ({
       <Header />
       <main className="relative pl-4 pb-24 lg:space-y-24 lg:pl-16">
         <Banner netflixOriginals={netflixOriginals} />
-        <section className="md:space-y-24">
-          <Row title="Trending Now" movies={trendingNow} />
-          <Row title="Top Rated" movies={topRated} />
-          <Row title="Action Thrillers" movies={actionMovies} />
-          {/* My List */}
-          {/* {list.length > 0 && <Row title="My List" movies={list} />} */}
-          <Row title="Comedies" movies={comedyMovies} />
-          <Row title="Scary Movies" movies={horrorMovies} />
-          <Row title="Romance Movies" movies={romanceMovies} />
-          <Row title="Documentaries" movies={documentaries} />
-        </section>
+          <section className="md:space-y-24">
+            {categories.map(category => (
+              <Row key={category.id} title={category.title} contents={contents.filter(content => content.category === category.id)} />
+            ))}
+          </section>
       </main>
-      {/* Modal */}
+      {/* Modal / video */}
     </div>
   )
 }
@@ -75,6 +73,135 @@ export const getServerSideProps = async () => {
     fetch(requests.fetchRomanceMovies).then((res) => res.json()),
     fetch(requests.fetchDocumentaries).then((res) => res.json()),
   ])
+  const categories = [{
+    id: '100',
+    title: 'Messages'
+  },
+  {
+    id: '101',
+    title: 'Position'
+  },
+  {
+    id: '102',
+    title: 'Activities'
+  }]
+  const contents = [  {
+    title: 'CEO: James',
+    html: '',
+    thumbnail: 'https://firebasestorage.googleapis.com/v0/b/dinami-27097.appspot.com/o/pexels-tiger-lily-7109087.jpg?alt=media&token=e14fe87a-5454-424f-8fec-27e96ef0590d',
+    media: '',
+    contentType: 'video',
+    id: '0',
+    category: '100'
+  },
+  {
+    title: 'CTO: Keiko',
+    html: '',
+    thumbnail: 'https://firebasestorage.googleapis.com/v0/b/dinami-27097.appspot.com/o/pexels-christina-morillo-1181472.jpg?alt=media&token=c122c2c2-1904-4f81-9711-893465fa9010',
+    media: '',
+    contentType: 'video',
+    id: '1',
+    category: '100'
+  },
+  {
+    title: 'HR: Thompson',
+    html: '',
+    thumbnail: 'https://firebasestorage.googleapis.com/v0/b/dinami-27097.appspot.com/o/pexels-cottonbro-studio-7437495.jpg?alt=media&token=c63fb4dd-c082-4826-b599-6b145b479515',
+    media: '',
+    contentType: 'video',
+    id: '2',
+    category: '100'
+  },
+  {
+    title: 'Sales: Kim',
+    html: '',
+    thumbnail: 'https://firebasestorage.googleapis.com/v0/b/dinami-27097.appspot.com/o/pexels-yan-krukau-8867237.jpg?alt=media&token=2f2af963-9e19-4bf4-8229-3739b7e0ad6b',
+    media: '',
+    contentType: 'video',
+    id: '3',
+    category: '100'
+  },
+  {
+    title: 'Lead Engineer: Larry',
+    html: '',
+    thumbnail: 'https://firebasestorage.googleapis.com/v0/b/dinami-27097.appspot.com/o/pexels-ono-kosuki-5648401.jpg?alt=media&token=f07b86e3-b2b0-47db-9113-0f9212cc8edf',
+    media: '',
+    contentType: 'video',
+    id: '4',
+    category: '100'
+  },
+  {
+    title: 'Sr Web Desinger',
+    html: '',
+    thumbnail: 'https://firebasestorage.googleapis.com/v0/b/dinami-27097.appspot.com/o/pexels-andrea-piacquadio-806835.jpg?alt=media&token=d27873dd-5aae-4459-8348-b6ab903ec51c',
+    media: '',
+    contentType: 'video',
+    id: '0',
+    category: '101'
+  },
+  {
+    title: 'Jr Web Developer',
+    html: '',
+    thumbnail: 'https://firebasestorage.googleapis.com/v0/b/dinami-27097.appspot.com/o/company.jpg?alt=media&token=6db4e77a-3992-482a-98be-2f7cd463ab01',
+    media: '',
+    contentType: 'video',
+    id: '1',
+    category: '101'
+  },
+  {
+    title: 'HR Assistance',
+    html: '',
+    thumbnail: 'https://firebasestorage.googleapis.com/v0/b/dinami-27097.appspot.com/o/pexels-cottonbro-studio-7437495.jpg?alt=media&token=c63fb4dd-c082-4826-b599-6b145b479515',
+    media: '',
+    contentType: 'video',
+    id: '2',
+    category: '101'
+  },
+  {
+    title: 'Inside Sales',
+    html: '',
+    thumbnail: 'https://firebasestorage.googleapis.com/v0/b/dinami-27097.appspot.com/o/pexels-yan-krukau-8867237.jpg?alt=media&token=2f2af963-9e19-4bf4-8229-3739b7e0ad6b',
+    media: '',
+    contentType: 'video',
+    id: '3',
+    category: '101'
+  },
+  {
+    title: 'Mid Server Side Engineer',
+    html: '',
+    thumbnail: 'https://firebasestorage.googleapis.com/v0/b/dinami-27097.appspot.com/o/pexels-cottonbro-studio-7437489.jpg?alt=media&token=46806562-8a7b-49b4-8677-4601be947d58',
+    media: '',
+    contentType: 'video',
+    id: '4',
+    category: '101'
+  },
+  {
+    title: 'TV appearance',
+    html: '',
+    thumbnail: 'https://firebasestorage.googleapis.com/v0/b/dinami-27097.appspot.com/o/company.jpg?alt=media&token=6db4e77a-3992-482a-98be-2f7cd463ab01',
+    media: '',
+    contentType: 'video',
+    id: '1',
+    category: '102'
+  },
+  {
+    title: 'Christmas party 2022',
+    html: '',
+    thumbnail: 'https://firebasestorage.googleapis.com/v0/b/dinami-27097.appspot.com/o/pexels-jonathan-nenemann-13434458.jpg?alt=media&token=5bc6c379-9d5a-45ad-a38f-19f0fc50e436',
+    media: '',
+    contentType: 'video',
+    id: '1',
+    category: '102'
+  },
+  {
+    title: 'Deep dive our service',
+    html: '',
+    thumbnail: 'https://firebasestorage.googleapis.com/v0/b/dinami-27097.appspot.com/o/pexels-it-services-eu-7596370.jpg?alt=media&token=3d4e210a-46b6-4562-a63e-dc5676df0508',
+    media: '',
+    contentType: 'video',
+    id: '1',
+    category: '102'
+  }]
   return {
     props: {
       netflixOriginals: netflixOriginals.results,
@@ -84,7 +211,9 @@ export const getServerSideProps = async () => {
       comedyMovies: comedyMovies.results,
       horrorMovies: horrorMovies.results,
       romanceMovies: romanceMovies.results,
-      documentaries: documentaries.results
+      documentaries: documentaries.results,
+      categories: categories,
+      contents: contents
     }
   }
 }
