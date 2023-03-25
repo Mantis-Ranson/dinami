@@ -21,6 +21,21 @@ export interface Genre {
     vote_average: number
     vote_count: number
   }
+
+  export interface Content {
+    title: string
+    html: string
+    thumbnail: string
+    media: string
+    contentType: string
+    id: string
+    category: string
+  }
+
+  export interface Category {
+    id: string
+    title: string
+  }
   
   export interface Element {
     type:

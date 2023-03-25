@@ -1,14 +1,14 @@
-import { Movie } from "@/types/content"
+import { Content } from "@/types/content"
 import { ChevronLeftIcon, ChevronRightIcon} from "@heroicons/react/24/solid"
 import { useRef, useState } from "react"
 import Thumbnail from "./Thumbnail"
 
 interface Props {
   title: string
-  movies: Movie[]
+  contents: Content[]
 }
 
-function Row({title, movies}: Props) {
+function Row({title, contents}: Props) {
   const rowRef = useRef<HTMLDivElement>(null)
   const [isMoved, setIsMoved] = useState(false)
   const handleClick = (direction:string) => {
@@ -34,8 +34,8 @@ function Row({title, movies}: Props) {
          ref={rowRef}
          className="flex items-center scrollbar-hide space-x-0.5 overflow-x-scroll md:space-x-2.5
          md:p-2">
-          {movies.map((movie) => (
-            <Thumbnail key={movie.id} movie={movie}/>
+          {contents.map((content) => (
+            <Thumbnail key={content.id} content={content}/>
           ))}
          </div>
         <ChevronRightIcon className={`absolute top-0 bottom-0 right-2 z-40 m-auto h-9 w-9 cursor-pointer

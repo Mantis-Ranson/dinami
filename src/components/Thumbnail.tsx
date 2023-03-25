@@ -1,21 +1,22 @@
-import { Movie } from "@/types/content"
+import { Content } from "@/types/content"
 import Image from "next/image"
 
 interface Props {
-    movie: Movie
+    content: Content
 }
-function Thumbnail({movie}: Props) {
+function Thumbnail({content}: Props) {
   return (
-    <div className="relative h-28 min-w-[180px] cursor-pointer transition
-    duration-200 md:h-36 md:min-w-[260px] md:hover:scale-105">
-      <Image
-        alt=""
-        src={`https://image.tmdb.org/t/p/w500${
-          movie.backdrop_path || movie.poster_path
-        }`}
-        className="rounded-sm object-cover md:rounded"
-        fill
-      />
+    <div className="cursor-pointer transition duration-200 md:hover:scale-105">
+    <div className="relative h-28 min-w-[180px] md:h-36 md:min-w-[260px]">
+        <Image
+            alt=""
+            src={`${content.thumbnail}`}
+            className="rounded-sm md:rounded-t-lg"
+            fill
+            style={{objectFit: 'cover'}}
+        />
+     </div>
+     <div className="bottom-0 bg-black w-full rounded-b-lg md:rounded-b-lg pl-2"> {content.title}</div>
     </div>
   )
 }
