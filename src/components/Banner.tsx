@@ -23,7 +23,7 @@ function Banner({ netflixOriginals}: Props) {
         fill
         style={{objectFit:'cover'}}
         /> */}
-        <Image alt="" src="https://firebasestorage.googleapis.com/v0/b/dinami-27097.appspot.com/o/pexels-ketut-subiyanto-4350089.jpg?alt=media&token=81433a73-99ac-4198-824c-d47ed429bb93"
+        <Image alt="" src="https://firebasestorage.googleapis.com/v0/b/dinami-27097.appspot.com/o/pexels-ketut-subiyanto-4350089.jpg?alt=media&token=223d84c0-4b49-4cfa-aebd-e2c1b7a17c0a"
         fill
         style={{objectFit: 'cover'}}
         />
