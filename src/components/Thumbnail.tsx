@@ -13,7 +13,7 @@ function Thumbnail({content}: Props) {
             src={`${content.thumbnail}`}
             className="rounded-sm md:rounded"
             fill
-            
+            style={{objectFit: 'cover'}}
         />
      </div>
      <div className="bottom-0 bg-none w-full rounded-b-lg md:rounded-b-lg pl-2"> {content.title}</div>
