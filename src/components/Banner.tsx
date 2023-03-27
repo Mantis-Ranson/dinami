@@ -33,7 +33,7 @@ function Banner({ netflixOriginals}: Props) {
       </h1>
       <p className="max-w-xs text-shadow-md text-sx md:max-w-lg md:text-lg lg:max-w-2xl lg:text-2xl drop-shadow-lg"
       style={{textShadow: '1px 1px 1px black'}}>
-        Ideas are work better
+        Ideas work,
         when we work together.
       </p>
     <div className="flex space-x-3">
