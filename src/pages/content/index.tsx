@@ -43,9 +43,9 @@ function Content() {
               </div>
               <div className="bg-[#333] text-white p-4 rounded-md md:max-w-5xl">
                 <p>
-                  Hello viewers,
+                  {`Hello viewers,
                   Thank you for viewing Devippo's page.
-                  Feel free to follow me on twitter & Linkedin as I often post there.
+                  Feel free to follow me on twitter & Linkedin as I often post there.`}
                 </p>
               </div>
             </div>
