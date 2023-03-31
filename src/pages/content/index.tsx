@@ -2,7 +2,7 @@ import { useRouter } from 'next/router'
 import Header from '@/components/Header'
 import Head from 'next/head'
 import { GlobeAltIcon } from '@heroicons/react/24/solid'
-import useWindowSize from '@/hooks/windowSide'
+import useWindowSize from "@/hooks/windowSide"
 
 function Content() {
     const router = useRouter()
@@ -19,9 +19,6 @@ function Content() {
           </Head>
           <Header />
           <main className="pt-16">
-            {/* <div className='p-2'>
-              { companyName } {'>'} { contentId }
-            </div> */}
             <div className="flex justify-center">
               <iframe width={size.width} height={getVideoRatioWidth()} src="https://www.youtube.com/embed/FFAMYW2POBw" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
             </div>
@@ -46,10 +43,9 @@ function Content() {
               </div>
               <div className="bg-[#333] text-white p-4 rounded-md md:max-w-5xl">
                 <p>
-                  Hello viewers,
-
+                  {`Hello viewers,
                   Thank you for viewing Devippo's page.
-                  Feel free to follow me on twitter & Linkedin as I often post there.
+                  Feel free to follow me on twitter & Linkedin as I often post there.`}
                 </p>
               </div>
             </div>
