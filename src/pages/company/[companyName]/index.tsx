@@ -1,7 +1,6 @@
 import Head from 'next/head'
 import Header from '@/components/Header'
 import Banner from '@/components/Banner'
-import requests from '@/utils/requests'
 import { Content, Category } from '@/types/content'
 import Row from '@/components/Row'
 
