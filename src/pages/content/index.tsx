@@ -2,7 +2,7 @@ import { useRouter } from 'next/router'
 import Header from '@/components/Header'
 import Head from 'next/head'
 import { GlobeAltIcon } from '@heroicons/react/24/solid'
-import useWindowSize from '@/hooks/windowSide'
+import useWindowSize from "@/hooks/windowSide"
 
 function Content() {
     const router = useRouter()
@@ -44,7 +44,6 @@ function Content() {
               <div className="bg-[#333] text-white p-4 rounded-md md:max-w-5xl">
                 <p>
                   Hello viewers,
-
                   Thank you for viewing Devippo's page.
                   Feel free to follow me on twitter & Linkedin as I often post there.
                 </p>
