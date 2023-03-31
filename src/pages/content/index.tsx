@@ -19,9 +19,6 @@ function Content() {
           </Head>
           <Header />
           <main className="pt-16">
-            {/* <div className='p-2'>
-              { companyName } {'>'} { contentId }
-            </div> */}
             <div className="flex justify-center">
               <iframe width={size.width} height={getVideoRatioWidth()} src="https://www.youtube.com/embed/FFAMYW2POBw" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
             </div>
