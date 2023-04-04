@@ -1,5 +1,4 @@
-import { BellIcon, MagnifyingGlassIcon, GlobeAltIcon } from "@heroicons/react/24/solid"
-import Link from "next/link"
+import { GlobeAltIcon } from "@heroicons/react/24/solid"
 import { useEffect, useState } from "react"
 
 function Header() {
@@ -28,16 +27,8 @@ function Header() {
               alt=""
               className="cursor-pointer object-contain"
             />
-            <ul className="hidden space-x-4 md:flex">
-                {/* <li className="headerLink">Home</li>
-                <li className="headerLink">Messages</li>
-                <li className="headerLink">Positions</li>
-                <li className="headerLink">News</li> 
-                <li className="headerLink">My list</li> */}
-            </ul>
         </div>
         <div className="flex items-center space-x-4 text-sm font-light">
-            {/* <MagnifyingGlassIcon className="hidden h-6 w-6 sm:inline"/> */}
             <a target="_blank" href="https://www.youtube.com/@devippo/videos" rel="noopener noreferrer">
                 <GlobeAltIcon className="h-6 w-6"/>
             </a>
